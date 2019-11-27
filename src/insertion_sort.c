@@ -1,6 +1,6 @@
 /*
  * insertion_sort.c
- *
+ * between O(n) and O(n^2) time; best and worst case
  *  Created on: 23 Nov 2019
  *      Author: danielle
  */
