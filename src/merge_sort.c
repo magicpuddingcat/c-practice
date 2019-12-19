@@ -26,7 +26,7 @@ int main( int argc, const char* argv[] ) {
 
 	// Sort the input arrays
 	merge_sort(arr_1, 0, 6);
-	merge_sort(arr_1, 0, 9);
+	merge_sort(arr_2, 0, 9);
 
 	// Now print the sorted arrays
 	printf("The sorted arrays are: \n");
