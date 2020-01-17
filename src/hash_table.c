@@ -10,20 +10,34 @@
 #include <string.h>
 #include <stdlib.h>
 
-void hashfunc(char arr[], int arr_len); // @suppress("Unused function declaration")
+int hashfunc(char arr[], int arr_len);
 int find_string_len(char char_array[]);
 
 // Initialise struct to handle key-value pairings
 struct Dict {
-   char key[];
    int index;
+   char *key;
 };
 
 int main( int argc, const char* argv[] )
 {
    //Recording example array of keys
 	char keys1[] = {"ffthd", "HGfftyn", "bcdancH"};
-	Dict this_dict[]; // @suppress("Type cannot be resolved")
+	int keys1_len = 3;
+
+	struct Dict this_dict[keys1_len];
+
+	//Assign key and index to members of the Dict array and then print them
+	for (int i=0; i < keys1_len; i++) {
+		//Assign the string as key and then assign it an index number
+		this_dict[i].key = &keys1[i]; // @suppress("Field cannot be resolved")
+		this_dict[i].index = hashfunc(keys1[i], find_string_len(keys1[i])); // @suppress("Field cannot be resolved")
+
+		//Now print the array of structs
+		printf("%d |", this_dict[i].index);
+		printf("%f", keys1[i]);
+		printf("\n");
+	}
 }
 
 int find_string_len(char char_array[]) { // @suppress("No return")
